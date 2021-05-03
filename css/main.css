@@ -16,5 +16,25 @@ body{
     justify-content:center;
     height: 100vh;
 }
+h1{
+    margin-bottom: 10px;
+}
+ul{
+    width: 500px;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.indice{
+    display: inline-block;
+    width: 30px;
+}
+
+/* .email{
+    margin-left: 10px;
+} */
 
 
