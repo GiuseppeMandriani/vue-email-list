@@ -47,22 +47,24 @@ const app = new Vue({
     },
 
     created(){
+        setTimeout(() =>{
+            for(let i = 0; i < 10; i++){
+                // API CALL
+                axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+                .then( result =>{
+                    // Success
+                    console.log(result)
+                    console.log(result.data)
+                    console.log('EMail random: ', result.data.response)
+        
+                    this.listaEmail.push(result.data.response)
+        
+                }).catch(err =>{
+                    console.log('Errore: ', err)
+                })
+            }
 
-        for(let i = 0; i < 10; i++){
-            // API CALL
-            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then( result =>{
-                // Success
-                console.log(result)
-                console.log(result.data)
-                console.log('EMail random: ', result.data.response)
-    
-                this.listaEmail.push(result.data.response)
-    
-            }).catch(err =>{
-                console.log('Errore: ', err)
-            })
-        }
+        },1500)
 
     },
     
