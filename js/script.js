@@ -40,23 +40,29 @@ const app = new Vue({
         listaEmail:[],
     },
 
+    computed:{
+        emailComplete(){
+            return this.listaEmail.length === 10;
+        }
+    },
+
     created(){
-        // API CALL
-        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then( result =>{
-            // Success
-            console.log(result)
-            console.log(result.data)
-            console.log('EMail random: ', result.data.response)
 
-            this.listaEmail = result.data.response
-
-            console.log('lista email: ', listaEmail)
-        })
-        .catch(err =>{
-            console.log('Errore: ', err)
-        })
-    console.log(listaEmail)
+        for(let i = 0; i < 10; i++){
+            // API CALL
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+            .then( result =>{
+                // Success
+                console.log(result)
+                console.log(result.data)
+                console.log('EMail random: ', result.data.response)
+    
+                this.listaEmail.push(result.data.response)
+    
+            }).catch(err =>{
+                console.log('Errore: ', err)
+            })
+        }
 
     },
     

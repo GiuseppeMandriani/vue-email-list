@@ -12,7 +12,15 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ listaEmail}}</h1>
+        <div class="container">
+            <h1>LISTA EMAIL BY API </h1>
+            <ul v-if="emailComplete">
+                <li v-for="email in listaEmail"> {{ email }}</li>
+            </ul>
+    
+            <h2 v-else>LOADING...</h2>
+
+        </div>
     </div>
 
 
