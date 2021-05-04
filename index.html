@@ -15,7 +15,9 @@
         <div class="container">
             <h1>LISTA EMAIL BY API </h1>
             <ul v-if="emailComplete">
-                <li v-for="(email, index) in listaEmail"><span class="indice">{{ index + 1 }}</span><span class="email">{{ email }}</span> </li>
+                <li v-for="(email, index) in listaEmail">
+                    <a :href="`mailto:${email}`">{{ email}} </a>
+                </li>
             </ul>
     
             <h2 v-else>LOADING...</h2>

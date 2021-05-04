@@ -31,6 +31,8 @@ console.log('Vue', Vue); // Verifica Vue
  * 
  */
 
+console.time()
+
 
 
 const app = new Vue({
@@ -59,7 +61,8 @@ const app = new Vue({
         
                     this.listaEmail.push(result.data.response)
         
-                }).catch(err =>{
+                })
+                .catch(err =>{
                     console.log('Errore: ', err)
                 })
             }
@@ -69,6 +72,8 @@ const app = new Vue({
     },
     
 });
+
+console.timeEnd();
     
     
     

@@ -27,6 +27,10 @@ ul li{
     list-style: none;
     margin-bottom: 10px;
 }
+ul li a {
+    text-decoration: none;
+    color: #000;
+}
 
 .indice{
     display: inline-block;
